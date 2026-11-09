@@ -77,7 +77,7 @@ function sayNo() {
   document.body.classList.add("raining");
 
   document.getElementById("no-message").textContent =
-    "Even the weather is heartbroken... 💔";
+    "oki u literally suck </3";
 
   effects.innerHTML = "";
 
