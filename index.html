@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Haley ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="effects"></div>
+
+  <main>
+    <!-- Welcome -->
+    <section class="page active" id="welcome">
+      <div class="content">
+        <span class="eyebrow">A LITTLE SOMETHING FOR YOU</span>
+        <div class="big-heart">♡</div>
+        <h1>Hi, Haley.</h1>
+        <p>
+          I made you something because sometimes
+          words alone don't feel like enough.
+        </p>
+        <p>And because you deserve something special.</p>
+        <button onclick="showPage('memories')">
+          Open your surprise ♡
+        </button>
+      </div>
+    </section>
+
+    <!-- Memories -->
+    <section class="page" id="memories">
+      <div class="content wide">
+        <span class="eyebrow">OUR LITTLE STORY</span>
+        <h1>Some of my favorite moments.</h1>
+        <p>
+          Every picture has a story.
+          These are a few of my favorites.
+        </p>
+
+        <div class="memory-grid">
+          <article class="memory">
+            <img src="photos/first-date.jpg" alt="Our first date">
+            <h3>Our First Date</h3>
+            <p>
+              I was too nervous to ask for a picture
+              together, so somehow this became my
+              first memory of us.
+            </p>
+          </article>
+
+          <article class="memory">
+            <img src="photos/us.jpg" alt="Our first picture together">
+            <h3>Our First Picture Together</h3>
+            <p>
+              One of my favorite pictures,
+              with one of my favorite people.
+            </p>
+          </article>
+
+          <article class="memory">
+            <img src="photos/through-it.jpg" alt="A memory together">
+            <h3>Through It All</h3>
+            <p>
+              Not exactly our best day, but one
+              I'll never forget. Thank you for
+              being there when I needed someone.
+            </p>
+          </article>
+
+          <article class="memory">
+            <img src="photos/museum.jpg" alt="Our museum date">
+            <h3>Our Museum Date</h3>
+            <p>
+              Even the simplest moments become
+              special when they're with you.
+            </p>
+          </article>
+
+          <article class="memory">
+            <img src="photos/longhorn.jpg" alt="Our LongHorn date">
+            <h3>Our LongHorn Date</h3>
+            <p>
+              The day you casually decided to eat
+              the entire menu. Still impressed,
+              honestly.
+            </p>
+          </article>
+        </div>
+
+        <button onclick="showPage('letter')">
+          There's something else... ♡
+        </button>
+      </div>
+    </section>
+
+    <!-- Love Letter -->
+    <section class="page" id="letter">
+      <div class="content">
+        <span class="eyebrow">FROM ME TO YOU</span>
+        <h1>Dear Haley,</h1>
+
+        <div class="letter-paper">
+          <p>
+            I don't think I could've imagined
+            just how much you'd come to mean to me
+            when we first started talking.
+          </p>
+
+          <p>
+            From our first date, when I was
+            too nervous to even ask for a picture,
+            to all the little adventures we've
+            had since, you've given me so many
+            memories that I genuinely treasure.
+          </p>
+
+          <p>
+            What means the most to me isn't
+            just the fun dates or the pictures.
+            It's the way you've been there for me,
+            even when things weren't going perfectly.
+            I appreciate that more than you know.
+          </p>
+
+          <p>
+            You make ordinary days feel special.
+            I love making you laugh, spending time
+            with you, and getting to know you more
+            every day.
+          </p>
+
+          <p>
+            And I hope this is only the beginning
+            of all the memories we'll make together.
+          </p>
+
+          <p class="signature">
+            With all my heart,<br>
+            Adriel ♡
+          </p>
+        </div>
+
+        <button onclick="showPage('question')">
+          One last thing...
+        </button>
+      </div>
+    </section>
+
+    <!-- Big Question -->
+    <section class="page" id="question">
+      <div class="content">
+        <span class="eyebrow">I HAVE A QUESTION</span>
+        <div class="big-heart">♡</div>
+        <h1>Haley...</h1>
+        <h2>May I be your boyfriend?</h2>
+        <p>No pressure. Just a boy who really likes you.</p>
+
+        <div class="choices">
+          <button class="yes-button" onclick="sayYes()">
+            Yes! ♡
+          </button>
+          <button class="no-button" onclick="sayNo()">
+            No
+          </button>
+        </div>
+
+        <p id="no-message" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Celebration -->
+    <section class="page" id="celebration">
+      <div class="content">
+        <div class="big-heart">♥</div>
+        <span class="eyebrow">IT'S OFFICIAL</span>
+        <h1>She said yes!!!</h1>
+        <h2>You just made me the happiest guy alive.</h2>
+        <p>
+          Here's to us, to all our memories,
+          and to all the ones we haven't made yet.
+        </p>
+        <p class="final-message">
+          Your boyfriend, Adriel ♡
+        </p>
+        <button onclick="showPage('welcome')">
+          Relive our story ♡
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
