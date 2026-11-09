@@ -1,0 +1,301 @@
+
+:root {
+  --pink: #d96b91;
+  --dark-pink: #b84f76;
+  --cream: #fff9f5;
+  --text: #654657;
+  --muted: #927785;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #fff8f5,
+    #ffe5ee,
+    #fceaf1
+  );
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+  transition: background 0.8s ease;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 70px 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.page.active {
+  display: flex;
+  animation: fadeIn 0.8s ease;
+}
+
+.content {
+  width: 100%;
+  max-width: 680px;
+  position: relative;
+  z-index: 2;
+}
+
+.content.wide {
+  max-width: 1050px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--pink);
+  font-weight: 600;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+}
+
+h1 {
+  font-size: clamp(40px, 7vw, 72px);
+  font-weight: 400;
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 400;
+  color: var(--dark-pink);
+}
+
+p {
+  line-height: 1.9;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.big-heart {
+  font-size: 100px;
+  color: var(--pink);
+  animation: heartbeat 2s infinite;
+}
+
+button {
+  font-family: inherit;
+  background: var(--pink);
+  color: white;
+  border: none;
+  padding: 16px 30px;
+  margin-top: 25px;
+  border-radius: 40px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 8px 25px #d96b9140;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  background: var(--dark-pink);
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin: 50px auto;
+}
+
+.memory {
+  background: white;
+  border-radius: 20px;
+  padding: 15px 15px 25px;
+  box-shadow: 0 12px 35px #b86a8a20;
+  transition: transform 0.3s;
+}
+
+.memory:hover {
+  transform: rotate(-1deg) translateY(-5px);
+}
+
+.memory img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.memory h3 {
+  color: var(--dark-pink);
+  font-size: 23px;
+  margin-bottom: 5px;
+}
+
+.memory p {
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.memory:last-child {
+  grid-column: 1 / -1;
+  width: min(100%, 490px);
+  justify-self: center;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.yes-button {
+  background: #d75b87;
+  font-size: 20px;
+  padding: 18px 48px;
+}
+
+.no-button {
+  background: #a99aa3;
+  font-size: 18px;
+  padding: 18px 40px;
+}
+
+#no-message {
+  min-height: 35px;
+  font-style: italic;
+}
+
+/* Special effects */
+
+#effects {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.falling-heart,
+.confetti,
+.raindrop {
+  position: absolute;
+  top: -40px;
+  pointer-events: none;
+}
+
+.falling-heart {
+  color: #e55e91;
+  animation: fall linear forwards;
+}
+
+.confetti {
+  width: 10px;
+  height: 16px;
+  animation: fall linear forwards;
+}
+
+.raindrop {
+  width: 2px;
+  height: 28px;
+  background: #7893bc;
+  opacity: 0.7;
+  animation: rainFall linear forwards;
+}
+
+body.raining {
+  background: linear-gradient(
+    135deg,
+    #a7b4c9,
+    #d6dce7
+  );
+}
+
+body.raining .big-heart {
+  color: #7385a4;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-30px) rotate(0deg);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(110vh) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rainFall {
+  from {
+    transform: translateY(-30px);
+  }
+
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .memory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .memory:last-child {
+    grid-column: auto;
+  }
+
+  .memory img {
+    height: 260px;
+  }
+
+  .page {
+    padding: 50px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
