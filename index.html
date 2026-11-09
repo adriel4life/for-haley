@@ -10,27 +10,38 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div id="effects"></div>
 
   <main>
+
     <!-- Welcome -->
     <section class="page active" id="welcome">
       <div class="content">
         <span class="eyebrow">A LITTLE SOMETHING FOR YOU</span>
+        <div class="big-heart">♡</div>
         <h1>hai</h1>
-        
+
+        <button onclick="showPage('memories')">
+          click me ♡
+        </button>
+      </div>
+    </section>
+
     <!-- Memories -->
     <section class="page" id="memories">
       <div class="content wide">
         <span class="eyebrow">OUR LITTLE STORY</span>
         <h1>Some of my favorite moments.</h1>
+
         <p>
           Every picture has a story.
           These are a few of my favorites.
         </p>
 
         <div class="memory-grid">
+
           <article class="memory">
             <img src="photos/first-date.jpg" alt="Our first date">
             <h3>Our First Date</h3>
@@ -73,25 +84,29 @@
               the entire menu BTW.
             </p>
           </article>
+
         </div>
 
-        <button onclick="showPage('letter')">
+        <button onclick="showPage('question')">
           There's something else tho...
         </button>
       </div>
     </section>
-        
+
     <!-- Big Question -->
     <section class="page" id="question">
       <div class="content">
         <span class="eyebrow">I HAVE A QUESTION</span>
+
         <div class="big-heart">♡</div>
-        <h1>May I be your boyfriend?</h2>
+
+        <h1>May I be your boyfriend?</h1>
 
         <div class="choices">
           <button class="yes-button" onclick="sayYes()">
-            Yes! 
+            Yes!
           </button>
+
           <button class="no-button" onclick="sayNo()">
             no...
           </button>
@@ -105,15 +120,20 @@
     <section class="page" id="celebration">
       <div class="content">
         <div class="big-heart">♥</div>
+
         <span class="eyebrow">IT'S OFFICIAL</span>
+
         <h1>lesssgooo</h1>
+
         <h2>best day ever - November 9, 2026</h2>
+
         <p>
           Here's to us, to all our memories,
           and to all the ones we haven't made yet.
         </p>
       </div>
     </section>
+
   </main>
 
   <script src="script.js"></script>
